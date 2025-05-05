@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Humaira Engineering and Build Pvt. Ltd.</title>
+  <style>
+    /* General Reset */
+    body, h1, h2, h3, p, ul, li, a {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #002b5e;
+      color: white;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    header .logo {
+      height: 60px;
+    }
+    header nav ul {
+      display: flex;
+      gap: 20px;
+    }
+    header nav ul li a {
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    header nav ul li a:hover {
+      color: #ffc300;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('assets/hero-banner.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero-content h1 {
+      font-size: 3rem; /* Smaller font size */
+      margin-bottom: 10px;
+      font-style: italic; /* Italicized design */
+      background: linear-gradient(90deg, #ff5733, #33c3ff, #ff33c3); /* Gradient colors */
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; /* Makes gradient visible */
+      font-weight: 900; /* Bold text */
+      text-transform: uppercase; /* Makes the company name uppercase */
+      white-space: nowrap; /* Ensures the text stays on a single line */
+    }
+    .hero-content .slogan {
+      font-size: 1.5rem;
+      font-style: italic;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #33ff57, #33c3ff, #ff33c3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: #ffc300; /* Fallback color for unsupported browsers */
+    }
+    .hero-content .cta {
+      background: #ffc300;
+      color: #002b5e;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .hero-content .cta:hover {
+      background: #ff5733;
+      color: white;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #002b5e;
+      text-align: center;
+    }
+    h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+
+    /* Services */
+    .services .service-cards {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+    }
+    .services .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      flex: 1;
+      text-align: center;
+    }
+
+    /* Gallery */
+    .gallery-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+      gap: 15px;
+      justify-items: center;
+    }
+    .gallery-images img {
+      width: 100%;
+      max-width: 300px; /* Ensures images don't get too large */
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease; /* Adds a zoom effect on hover */
+    }
+    .gallery-images img:hover {
+      transform: scale(1.05); /* Zoom effect */
+    }
+
+    /* Contact */
+    .contact iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      margin-top: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: #002b5e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    footer a {
+      color: #1877f2; /* Bright Facebook blue */
+      font-weight: bold; /* Makes the text bold */
+      font-size: 1.2rem; /* Slightly larger text */
+      text-decoration: none; /* Removes underline */
+    }
+    footer a:hover {
+      color: #0056d2; /* Darker blue on hover */
+      text-decoration: underline; /* Adds underline on hover */
+    }
+    footer a img {
+      margin-left: 10px; /* Space between text and icon */
+      width: 24px; /* Larger icon for better visibility */
+      height: 24px;
+      vertical-align: middle;
+      transition: transform 0.3s ease; /* Smooth hover effect */
+    }
+    footer a img:hover {
+      transform: scale(1.2); /* Slight zoom effect on hover */
+    }
+
+    /* Owner Section */
+    .owner {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+    .owner h2 {
+      margin-bottom: 20px;
+      color: #002b5e;
+    }
+    .owner-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .owner-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .owner-bio {
+      text-align: center;
+    }
+    .owner-bio h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .owner-bio p {
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    /* Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <img src="assets/logo.jpg" alt="Company Logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#owner">Director</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Humaira Engineering and Build Pvt. Ltd.</h1>
+      <p class="slogan">Turning vision into Strong, lasting Structures through Engineering Excellence.</p>
+      <a href="#services" class="cta">Explore Our Services</a>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <h3>Who We Are</h3>
+    <p>Humaira Engineering and Build Pvt. Ltd. is a dynamic Nepal-based company, established in 2025, specializing in construction, engineering, and infrastructure development. We are committed to building a better future through innovation and quality.</p>
+    <h3>Our Vision</h3>
+    <p>Our vision is to become a leading construction company renowned for delivering quality projects and fostering innovation in the construction industry.</p>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <h3>What We Offer</h3>
+    <div class="service-cards">
+      <div class="card">
+        <h3>Residential & Commercial</h3>
+        <p>We handle all types of residential and commercial construction projects with professionalism.</p>
+      </div>
+      <div class="card">
+        <h3>Road & Bridge Development</h3>
+        <p>We specialize in developing reliable road and bridge infrastructure.</p>
+      </div>
+      <div class="card">
+        <h3>Turnkey Projects</h3>
+        <p>Complete project management from planning to execution under one roof.</p>
+      </div>
+    </div>
+    <h3>Why Choose Us?</h3>
+    <p>We ensure timely delivery, quality work, and customer satisfaction in all our projects.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="gallery">
+    <h2>Gallery</h2>
+    <h3>Our Recent Projects</h3>
+    <div class="gallery-images">
+      <img src="assets/project1.jpg" alt="Project 1">
+      <img src="assets/project2.jpg" alt="Project 2">
+      <img src="assets/project3.jpg" alt="Project 3">
+      <img src="assets/project4.jpg" alt="Project 4">
+      <img src="assets/project5.jpg" alt="Project 5">
+      <img src="assets/project6.jpg" alt="Project 6">
+    </div>
+  </section>
+
+  <!-- Director Section -->
+  <section id="owner" class="owner">
+    <h2>Meet Our Director</h2>
+    <div class="owner-content">
+      <img src="assets/owner.jpg" alt="Hiralal Khan Miya" class="owner-image">
+      <div class="owner-bio">
+        <h3>Mr. Hiralal Khan Miya</h3>
+        <p>Mr. Hiralal Khan Miya is the esteemed Director of Humaira Engineering and Build Pvt. Ltd. With extensive experience in the construction and engineering industry, he has been the driving force behind the company's success and innovation.</p>
+        <p>Under his leadership, the company has built a reputation for delivering high-quality infrastructure projects and maintaining a commitment to excellence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <h3>Get in Touch</h3>
+    <p><strong>Address:</strong> Rajbiraj-3, Saptari, Madhesh Province, Nepal</p>
+    <p><strong>Phone:</strong> +977-9819954786, 9842823549</p>
+    <p><strong>Email:</strong> info.hebpvtltd@gmail.com</p>
+    <h3>Our Location</h3>
+    <iframe src="https://www.google.com/maps?q=26.539405,86.753849&output=embed"></iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Humaira Engineering and Build Pvt. Ltd. All rights reserved.</p>
+    <p>
+      Follow us on:
+      <a href="https://www.facebook.com/profile.php?id=61575258434382" target="_blank">
+        Facebook
+        <img src="assets/facebook-icon.png" alt="Facebook">
+      </a>
+    </p>
+  </footer>
+</body>
+</html>
